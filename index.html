@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Single-page developer portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./dist/index.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <span class="header__branding">adamkeyes</span>
+        <ul class="header__list">
+          <li class="header__item">
+            <a href="#"
+              ><img
+                class="header__icon"
+                src="./assets/images/icon-github.svg"
+                alt=""
+            /></a>
+          </li>
+          <li class="header__item">
+            <a href="#"
+              ><img
+                class="header__icon"
+                src="./assets/images/icon-frontend-mentor.svg"
+                alt=""
+            /></a>
+          </li>
+          <li class="header__item">
+            <a href="#"
+              ><img
+                class="header__icon"
+                src="./assets/images/icon-linkedin.svg"
+                alt=""
+            /></a>
+          </li>
+          <li class="header__item">
+            <a href="#"
+              ><img
+                class="header__icon"
+                src="./assets/images/icon-twitter.svg"
+                alt=""
+            /></a>
+          </li>
+        </ul>
+
+        <picture class="header__image">
+          <source
+            srcset="./assets/images/image-profile-mobile.webp"
+            media="(max-width: 480px)"
+            width="174"
+          />
+          <source
+            srcset="./assets/images/image-profile-tablet.webp"
+            media="(max-width: 847px)"
+            width="322"
+          />
+
+          <img
+            src="./assets/images/image-profile-desktop.webp"
+            width="445"
+            alt=""
+          />
+        </picture>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              Nice to meet you! I'm
+              <u class="hero__title-underline">Adam Keyes</u>.
+            </h1>
+            <p class="hero__text">
+              Based in the UK, I'm a front-end developer passionate about
+              building accessible web apps that users love.
+            </p>
+            <a href="#" class="button">Contact me</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="experience-section">
+        <div class="container">
+          <div class="experience">
+            <h2 class="experience__title">HTML</h2>
+            <p>4 Years Experience</p>
+          </div>
+          <div class="experience">
+            <h2 class="experience__title">CSS</h2>
+            <p>4 Years Experience</p>
+          </div>
+          <div class="experience">
+            <h2 class="experience__title">JavaScript</h2>
+            <p>4 Years Experience</p>
+          </div>
+          <div class="experience">
+            <h2 class="experience__title">Accessibility</h2>
+            <p>4 Years Experience</p>
+          </div>
+          <div class="experience">
+            <h2 class="experience__title">React</h2>
+            <p>3 Years Experience</p>
+          </div>
+          <div class="experience">
+            <h2 class="experience__title">Sass</h2>
+            <p>3 Years Experience</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="projects-section">
+        <div class="container">
+          <header class="projects-section__header">
+            <h2 class="projects-section__title">Projects</h2>
+            <a class="button" href="#">Contact me</a>
+          </header>
+          <div class="projects">
+            <div class="project">
+              <div class="project__image-container">
+                <picture class="project__picture">
+                  <source
+                    srcset="
+                      ./assets/images/thumbnail-project-1-small.webp 1x,
+                      ./assets/images/thumbnail-project-1-large.webp 2x
+                    "
+                  />
+                  <img
+                    src="./assets/images/thumbnail-project-1-large.webp"
+                    class="project__image"
+                    alt=""
+                  />
+                </picture>
+
+                <div class="project__image-overlay">
+                  <a href="#" class="button">View project</a>
+                  <a href="#" class="button">View code</a>
+                </div>
+              </div>
+              <h3 class="project__title">Design portfolio</h3>
+              <ul class="project__badges">
+                <li class="project__badge">HTML</li>
+                <li class="project__badge">CSS</li>
+              </ul>
+              <div class="project__mobile-links">
+                <a href="#" class="button">View project</a>
+                <a href="#" class="button">View code</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project__image-container">
+                <picture class="project__picture">
+                  <source
+                    srcset="
+                      ./assets/images/thumbnail-project-2-small.webp 1x,
+                      ./assets/images/thumbnail-project-2-large.webp 2x
+                    "
+                  />
+                  <img
+                    src="./assets/images/thumbnail-project-2-large.webp"
+                    class="project__image"
+                    alt=""
+                  />
+                </picture>
+                <div class="project__image-overlay">
+                  <a href="#" class="button">View project</a>
+                  <a href="#" class="button">View code</a>
+                </div>
+              </div>
+              <h3 class="project__title">E-learning landing page</h3>
+              <ul class="project__badges">
+                <li class="project__badge">HTML</li>
+                <li class="project__badge">CSS</li>
+              </ul>
+              <div class="project__mobile-links">
+                <a href="#" class="button">View project</a>
+                <a href="#" class="button">View code</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project__image-container">
+                <picture class="project__picture">
+                  <source
+                    srcset="
+                      ./assets/images/thumbnail-project-3-small.webp 1x,
+                      ./assets/images/thumbnail-project-3-large.webp 2x
+                    "
+                  />
+                  <img
+                    src="./assets/images/thumbnail-project-3-large.webp"
+                    class="project__image"
+                    alt=""
+                  />
+                </picture>
+                <div class="project__image-overlay">
+                  <a href="#" class="button">View project</a>
+                  <a href="#" class="button">View code</a>
+                </div>
+              </div>
+              <h3 class="project__title">Todo web app</h3>
+              <ul class="project__badges">
+                <li class="project__badge">HTML</li>
+                <li class="project__badge">CSS</li>
+                <li class="project__badge">JavaScript</li>
+              </ul>
+              <div class="project__mobile-links">
+                <a href="#" class="button">View project</a>
+                <a href="#" class="button">View code</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project__image-container">
+                <picture class="project__picture">
+                  <source
+                    srcset="
+                      ./assets/images/thumbnail-project-4-small.webp 1x,
+                      ./assets/images/thumbnail-project-4-large.webp 2x
+                    "
+                  />
+                  <img
+                    src="./assets/images/thumbnail-project-4-large.webp"
+                    class="project__image"
+                    alt=""
+                  />
+                </picture>
+                <div class="project__image-overlay">
+                  <a href="#" class="button">View project</a>
+                  <a href="#" class="button">View code</a>
+                </div>
+              </div>
+              <h3 class="project__title">Entertainment web app</h3>
+              <ul class="project__badges">
+                <li class="project__badge">HTML</li>
+                <li class="project__badge">CSS</li>
+                <li class="project__badge">JavaScript</li>
+              </ul>
+              <div class="project__mobile-links">
+                <a href="#" class="button">View project</a>
+                <a href="#" class="button">View code</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project__image-container">
+                <picture class="project__picture">
+                  <source
+                    srcset="
+                      ./assets/images/thumbnail-project-5-small.webp 1x,
+                      ./assets/images/thumbnail-project-5-large.webp 2x
+                    "
+                  />
+                  <img
+                    src="./assets/images/thumbnail-project-5-large.webp"
+                    class="project__image"
+                    alt=""
+                  />
+                </picture>
+                <div class="project__image-overlay">
+                  <a href="#" class="button">View project</a>
+                  <a href="#" class="button">View code</a>
+                </div>
+              </div>
+              <h3 class="project__title">Memory Game</h3>
+              <ul class="project__badges">
+                <li class="project__badge">HTML</li>
+                <li class="project__badge">CSS</li>
+                <li class="project__badge">JavaScript</li>
+              </ul>
+              <div class="project__mobile-links">
+                <a href="#" class="button">View project</a>
+                <a href="#" class="button">View code</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project__image-container">
+                <picture class="project__picture">
+                  <source
+                    srcset="
+                      ./assets/images/thumbnail-project-6-small.webp 1x,
+                      ./assets/images/thumbnail-project-6-large.webp 2x
+                    "
+                  />
+                  <img
+                    src="./assets/images/thumbnail-project-6-large.webp"
+                    class="project__image"
+                    alt=""
+                  />
+                </picture>
+                <div class="project__image-overlay">
+                  <a href="#" class="button">View project</a>
+                  <a href="#" class="button">View code</a>
+                </div>
+              </div>
+              <h3 class="project__title">Art gallery showcase</h3>
+              <ul class="project__badges">
+                <li class="project__badge">HTML</li>
+                <li class="project__badge">CSS</li>
+                <li class="project__badge">JavaScript</li>
+              </ul>
+              <div class="project__mobile-links">
+                <a href="#" class="button">View project</a>
+                <a href="#" class="button">View code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__row">
+          <div>
+            <h2 class="footer__title">Contact</h2>
+            <p>
+              I would love to hear about your project and how I could help.
+              Please fill in the form, and I’ll get back to you as soon as
+              possible.
+            </p>
+          </div>
+
+          <div>
+            <form
+              id="form"
+              class="form"
+              action="https://formspree.io/f/mzbnayon"
+              method="POST"
+            >
+              <div class="form__group">
+                <input
+                  class="form__input"
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Name"
+                />
+                <p class="form__error">Sorry, invalid format here</p>
+              </div>
+              <div class="form__group">
+                <input
+                  class="form__input"
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                />
+                <p class="form__error">Sorry, invalid format here</p>
+              </div>
+              <div class="form__group">
+                <textarea
+                  class="form__input"
+                  name="message"
+                  id="message"
+                  cols="30"
+                  rows="3"
+                  placeholder="Message"
+                ></textarea>
+                <p class="form__error">Sorry, invalid format here</p>
+              </div>
+              <button class="button" type="submit">Send message</button>
+            </form>
+            <div id="status" class="form__status form__status--success"></div>
+          </div>
+        </div>
+        <footer class="footer__bottom">
+          <span class="footer__branding">adamkeyes</span>
+
+          <ul class="footer__list">
+            <li>
+              <a href="#"
+                ><img
+                  class="footer__icon"
+                  src="./assets/images/icon-github.svg"
+                  alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  class="footer__icon"
+                  src="./assets/images/icon-frontend-mentor.svg"
+                  alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  class="footer__icon"
+                  src="./assets/images/icon-linkedin.svg"
+                  alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  class="footer__icon"
+                  src="./assets/images/icon-twitter.svg"
+                  alt=""
+              /></a>
+            </li>
+          </ul>
+        </footer>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

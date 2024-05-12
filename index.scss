@@ -1,0 +1,699 @@
+@mixin desktop {
+  @media (max-width: 1110px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 847px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+// VARIABLES
+
+:root {
+  --font-family: "Space Grotesk", sans-serif;
+  --color-black: #151515;
+  --color-green: #4ee1a0;
+  --color-dark-gray: #242424;
+  --color-light-gray: #d9d9d9;
+  --color-white: #ffffff;
+  --color-red: #ff6f5b;
+  --heading-xl-font-size: 8.8rem;
+  --heading-xl-line-height: 1;
+  --heading-xl-letter-spacing: -2.5px;
+  --heading-l-font-size: 4.8rem;
+  --heading-l-line-height: 5.6rem;
+  --heading-l-letter-spacing: -1.5px;
+  --heading-m-font-size: 2.4rem;
+  --heading-m-line-height: 3.2rem;
+  --body-font-size: 1.8rem;
+  --body-line-height: 2.8rem;
+
+  @include tablet {
+    --heading-xl-font-size: 7.2rem;
+    --heading-xl-line-height: 1;
+    --heading-xl-letter-spacing: -2.05px;
+  }
+
+  @include mobile {
+    --heading-xl-font-size: 4rem;
+    --heading-xl-line-height: 1;
+    --heading-xl-letter-spacing: -1.14px;
+
+    --heading-l-font-size: 3.2rem;
+    --heading-l-line-height: 4rem;
+    --heading-l-letter-spacing: -1px;
+
+    --body-font-size: 1.6rem;
+    --body-line-height: 2.6rem;
+  }
+}
+
+// RESET
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-white);
+}
+
+h1 {
+  font-size: var(--heading-xl-font-size);
+  line-height: var(--heading-xl-line-height);
+  letter-spacing: var(--heading-xl-letter-spacing);
+}
+
+h2 {
+  font-size: var(--heading-l-font-size);
+  line-height: var(--heading-l-line-height);
+  letter-spacing: var(--heading-l-letter-spacing);
+}
+
+h3 {
+  font-size: var(--heading-m-font-size);
+  line-height: var(--heading-m-line-height);
+}
+
+// GENERAL STYLES
+
+body {
+  background-color: var(--color-black);
+  font-size: var(--body-font-size);
+  font-family: var(--font-family);
+  line-height: var(--body-line-height);
+  color: var(--color-light-gray);
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 auto;
+
+  @include desktop {
+    padding: 0 3.2rem;
+  }
+
+  @include mobile {
+    padding: 0 1.6rem;
+  }
+}
+
+::selection {
+  background-color: var(--color-green);
+  color: var(--color-black);
+}
+
+// BUTTON
+
+.button {
+  display: inline-block;
+  padding-bottom: 1rem;
+  transition: color 0.25s ease;
+  cursor: pointer;
+  border: 0;
+  border-bottom: 2px solid var(--color-green);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+  color: var(--color-white);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2.29px;
+  background-color: transparent;
+
+  &:hover {
+    color: var(--color-green);
+  }
+}
+
+// HEADER
+
+.header {
+  padding: 3.9rem 0 12.7rem 0;
+
+  @include tablet {
+    padding: 2.9rem 0 9rem 0;
+  }
+
+  @include mobile {
+    padding: 2rem 0 33.1rem 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &::before {
+      content: url("../assets/images/pattern-rings.svg");
+      position: absolute;
+      z-index: -1;
+      top: calc(13.3rem - 3.9rem);
+      left: -26.5rem;
+
+      @include tablet {
+        top: calc(8.6rem - 2.9rem);
+      }
+
+      @include mobile {
+        top: calc(12.4rem - 2rem);
+        left: -34.2rem;
+      }
+    }
+
+    &::after {
+      content: url("../assets/images/pattern-circle.svg");
+      position: absolute;
+      z-index: 1;
+      top: 52.1rem;
+      right: 38rem;
+
+      @include tablet {
+        top: calc(47.1rem - 2.9rem);
+        right: -6.3rem;
+      }
+
+      @include mobile {
+        right: 0;
+        transform: translateX(50%);
+        top: calc(25.4rem - 2rem);
+      }
+    }
+  }
+
+  &__branding {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--color-white);
+    letter-spacing: -0.44px;
+
+    @include mobile {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    padding-right: 3rem;
+    list-style: none;
+
+    @include tablet {
+      padding-right: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    top: -3.9rem;
+    right: 0;
+
+    @include tablet {
+      top: -2.9rem;
+    }
+
+    @include mobile {
+      top: -2rem;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+
+  &__icon {
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(82%) sepia(42%) saturate(635%)
+        hue-rotate(88deg) brightness(95%) contrast(86%);
+    }
+  }
+}
+
+// HERO
+
+.hero {
+  .container {
+    padding-bottom: 21.9rem;
+    border-bottom: 1px solid var(--color-white);
+
+    @include tablet {
+      padding-bottom: 6rem;
+    }
+
+    @include mobile {
+      padding-bottom: 8rem;
+    }
+  }
+
+  &__content {
+    max-width: 706px;
+
+    @include tablet {
+      max-width: 445px;
+    }
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: 4.3rem;
+
+    @include tablet {
+      margin-bottom: 6rem;
+    }
+
+    @include mobile {
+      margin-bottom: 2.4rem;
+    }
+
+    &-underline {
+      position: relative;
+      text-decoration: none;
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background-color: var(--color-green);
+      }
+    }
+  }
+
+  &__text {
+    max-width: 445px;
+    margin-bottom: 6.6rem;
+
+    @include tablet {
+      margin-bottom: 3.4rem;
+    }
+
+    @include mobile {
+      margin-bottom: 2.4rem;
+    }
+  }
+}
+
+// EXPERIENCE SECTION
+
+.experience-section {
+  padding: 7.2rem 0 14rem 0;
+
+  @include mobile {
+    padding: 4rem 0 8rem 0;
+  }
+
+  .container {
+    display: grid;
+    gap: 5.3rem 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5.2rem 0.7rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 2.4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--color-white);
+    }
+
+    &::before {
+      content: url("../assets/images/pattern-rings.svg");
+      position: absolute;
+      top: calc(25.3rem - 7.2rem);
+      right: -40.4rem;
+
+      @include tablet {
+        top: calc(38.7rem - 5.2rem);
+        right: -36.2rem;
+      }
+
+      @include mobile {
+        top: calc(54rem - 4rem);
+        right: -36.2rem;
+      }
+    }
+
+    .experience {
+      &__title {
+        margin-bottom: 1.4rem;
+
+        @include mobile {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// PROJECTS SECTION
+
+.projects-section {
+  padding-bottom: 13.9rem;
+
+  @include mobile {
+    padding-bottom: 8rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8rem;
+
+    @include tablet {
+      margin-bottom: 6rem;
+    }
+
+    @include mobile {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__title {
+    font-size: var(--heading-xl-font-size);
+    line-height: var(--heading-xl-line-height);
+    letter-spacing: var(--heading-xl-letter-spacing);
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.9rem 3rem;
+
+    @include tablet {
+      gap: 6rem 2.4rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .project {
+    &__image-container {
+      position: relative;
+      height: 400px;
+      margin-bottom: 2rem;
+
+      @include tablet {
+        height: 253px;
+      }
+
+      &:hover {
+        .project__image-overlay {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__image-overlay {
+      width: 100%;
+      height: 100%;
+      background-color: hsla(0, 0%, 0%, 0.75);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4.8rem;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    &__picture {
+      position: absolute;
+      margin-bottom: 2rem;
+      z-index: -1;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__image {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+
+    &__badges {
+      list-style-type: none;
+      display: flex;
+      gap: 1.8rem;
+
+      @include tablet {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &__mobile-links {
+      display: none;
+      gap: 3rem;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+  }
+}
+
+// FOOTER
+
+.footer {
+  background-color: var(--color-dark-gray);
+  padding: 8.4rem 0 9.2rem 0;
+
+  @include tablet {
+    padding: 6rem 0 4rem 0;
+  }
+
+  @include mobile {
+    padding: 6rem 0;
+  }
+
+  .container {
+    position: relative;
+
+    &::before {
+      content: url("../assets/images/pattern-rings.svg");
+      position: absolute;
+      top: 24.3rem;
+      left: -37rem;
+
+      @include tablet {
+        top: calc(54.7rem - 6rem);
+      }
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22rem;
+    padding-bottom: 9.2rem;
+    border-bottom: 1px solid var(--color-white);
+
+    @include tablet {
+      grid-template-columns: 445px;
+      text-align: center;
+      justify-content: center;
+      gap: 4.8rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 5rem;
+      padding-bottom: 8.7rem;
+    }
+  }
+
+  &__title {
+    font-size: var(--heading-xl-font-size);
+    line-height: var(--heading-xl-line-height);
+    letter-spacing: var(--heading-xl-letter-spacing);
+    margin-bottom: 3.6rem;
+
+    @include mobile {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4.7rem;
+
+    @include tablet {
+      padding-top: 3rem;
+    }
+
+    @include mobile {
+      padding-top: 3.9rem;
+
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+  }
+
+  &__branding {
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.44px;
+    font-weight: 700;
+
+    @include mobile {
+      font-size: 2.4rem;
+      letter-spacing: -0.33px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    padding-right: 3rem;
+    list-style: none;
+
+    @include tablet {
+      padding-right: 0;
+    }
+
+    @include mobile {
+      gap: 2.5rem;
+    }
+  }
+
+  &__icon {
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(82%) sepia(42%) saturate(635%)
+        hue-rotate(88deg) brightness(95%) contrast(86%);
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: flex-end;
+
+  &__group {
+    width: 100%;
+    position: relative;
+
+    &--error {
+      .form__input {
+        border-bottom-color: var(--color-red);
+
+        &:focus,
+        &:hover {
+          border-bottom-color: var(--color-red);
+        }
+      }
+      .form__error {
+        transform: translateY(0);
+      }
+
+      &::before {
+        content: url("../assets/images/icon-warning.svg");
+        position: absolute;
+        right: 0;
+        z-index: 2;
+      }
+    }
+  }
+
+  &__error {
+    text-align: right;
+    margin-top: 0.5rem;
+    color: var(--color-red);
+    transform: translateY(-50px);
+    transition: transform 0.25s ease-in-out;
+  }
+
+  &__input {
+    font: inherit;
+    width: 100%;
+    background-color: var(--color-dark-gray);
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid var(--color-white);
+    color: var(--color-white);
+    text-transform: uppercase;
+    padding: 0 0 1.7rem 2.4rem;
+    position: relative;
+    z-index: 1;
+
+    &::placeholder {
+      color: var(--color-white);
+      opacity: 0.5;
+    }
+
+    &:hover,
+    &:focus {
+      border-bottom-color: var(--color-green);
+    }
+  }
+
+  &__status {
+    margin-top: 3.2rem;
+    display: none;
+
+    &--success {
+      color: var(--color-green);
+    }
+
+    &--error {
+      color: var(--color-red);
+    }
+  }
+}
